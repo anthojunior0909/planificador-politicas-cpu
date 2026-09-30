@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* 1. Le decimos a Tailwind v4 que use la clase .dark para sus utilidades dark: */
+@custom-variant dark (&:is(.dark *));
+
+/* 2. REGLAS GLOBALES PARA MODO OSCURO CORREGIDAS (con ! como prefijo) */
+.dark body {
+  @apply bg-gray-900 text-gray-200;
+}
+.dark .bg-white {
+  @apply !bg-gray-800 !border-gray-700 !text-gray-200;
+}
+.dark .bg-gray-50, .dark .bg-gray-100 {
+  @apply !bg-gray-900 !border-gray-700 !text-gray-300;
+}
+.dark .border-gray-100, .dark .border-gray-200, .dark .border-gray-300, .dark .border-gray-400 {
+  @apply !border-gray-700;
+}
+.dark .text-gray-900, .dark .text-gray-800, .dark .text-gray-700, .dark .text-gray-600 {
+  @apply !text-gray-300;
+}
+.dark .text-gray-500, .dark .text-gray-400 {
+  @apply !text-gray-400;
+}
